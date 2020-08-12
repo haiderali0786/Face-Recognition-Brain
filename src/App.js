@@ -10,15 +10,13 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import './App.css';
 
-//You must add your own API key here from Clarifai.
 const app = new Clarifai.App({
- apiKey: '65f49002fde9462595c182fefbb6806a'
-});
+  apiKey: '902cadaf7fc8479db15dfe150c8ec15a'});
 
 const particlesOptions = {
   particles: {
     number: {
-      value: 30,
+      value: 30, 
       density: {
         enable: true,
         value_area: 800
@@ -85,7 +83,7 @@ class App extends Component {
         this.state.input)
       .then(response => {
         if (response) {
-          fetch('http://localhost:3000/image', {
+          fetch('http://localhost:3001/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
